@@ -40,7 +40,7 @@ function App() {
           <button
             value={"1M"}
             type="button"
-            className={`tracking-[0.84px] uppercase py-1 px-2 text-[12px] font-medium text-dark_grey focus:outline-none ${
+            className={`tracking-[0.84px] uppercase py-1 px-2 text-[12px] font-medium focus:outline-none ${
               activeFilter === "1M" && "bg-neutral_white text-blue"
             }  rounded-full hover:bg-neutral_white hover:text-blue`}
             onClick={handleFilter}
@@ -50,7 +50,7 @@ function App() {
           <button
             value={"6M"}
             type="button"
-            className={`tracking-[0.84px] uppercase py-1 px-2 text-[12px] font-medium text-dark_grey focus:outline-none ${
+            className={`tracking-[0.84px] uppercase py-1 px-2 text-[12px] font-medium focus:outline-none ${
               activeFilter === "6M" && "bg-neutral_white text-blue"
             }  rounded-full hover:bg-neutral_white hover:text-blue`}
             onClick={handleFilter}
@@ -60,7 +60,7 @@ function App() {
           <button
             value={"1Y"}
             type="button"
-            className={`tracking-[0.84px] uppercase py-1 px-2 text-[12px] font-medium text-dark_grey focus:outline-none ${
+            className={`tracking-[0.84px] uppercase py-1 px-2 text-[12px] font-medium focus:outline-none ${
               activeFilter === "1Y" && "bg-neutral_white text-blue"
             }  rounded-full hover:bg-neutral_white hover:text-blue`}
             onClick={handleFilter}
@@ -70,7 +70,7 @@ function App() {
           <button
             value={"ALL TIME"}
             type="button"
-            className={`tracking-[0.84px] uppercase py-1 px-2 text-[12px] font-medium text-dark_grey focus:outline-none ${
+            className={`tracking-[0.84px] uppercase py-1 px-2 text-[12px] font-medium focus:outline-none ${
               activeFilter === "ALL TIME" && "bg-neutral_white text-blue"
             }  rounded-full hover:bg-neutral_white hover:text-blue`}
             onClick={handleFilter}
