@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
+import { formatNumber } from "../utils/numberFormat";
 
 const PROGRESS_UNIT = 0.01;
 const PROGRESS_TIMEOUT = 5;
@@ -39,6 +40,10 @@ export const DonutChart = ({
     }
   }, [visiblePart]);
 
+  const totalExpense = items.reduce((accumulator, currentObject) => {
+    return accumulator + currentObject.value;
+  }, 0);
+
   const segments = useMemo(() => {
     const sum = items.reduce((sum, item) => sum + item.value, 0);
     let start = 0;
@@ -62,30 +67,19 @@ export const DonutChart = ({
           />
         ))}
       </g>
-      <g style={{ fill: "#000", transform: "translateY(0.25em)" }}>
+      <g className="fill-black translate-y-[0.25em]">
         <text
           x="50%"
           y="50%"
-          style={{
-            fontSize: "2rem",
-            lineHeight: 1,
-            textAnchor: "middle",
-            transform: "translateY(-0.25em)",
-          }}
+          className="text-[2rem] translate-y-[0.25em] leading-[1] text-center"
+          textAnchor="middle"
         >
-          10
-        </text>
-        <text
-          x="50%"
-          y="50%"
-          style={{
-            fontSize: "1rem",
-            textTransform: "uppercase",
-            textAnchor: "middle",
-            transform: "translateY(0.7em)",
-          }}
-        >
-          Beers
+          <tspan className="text-[40px] fill-black">
+            {formatNumber(totalExpense)}
+          </tspan>
+          <tspan className="text-[19px] fill-light_purple_2 font-bold">
+            .00
+          </tspan>
         </text>
       </g>
     </svg>
